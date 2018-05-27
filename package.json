@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
      "start:dev": "nodemon --exec babel-node index.js",
+     "start":"node  --exec babel-node index.js",
     "test": "mocha ./test/*.test.js --require @babel/register --require @babel/polyfill"
   },
   "author": "",
