@@ -4,10 +4,15 @@ class BankAccount{
   constructor(id){
     this.id = id;
   }
-  async balance(){
-    const {data} = await axios.get('https://jsonplaceholder.typicode.com/todos');
-    const result = data.find(todo => todo.id === this.id);
-    return result
+  async balance(url){
+    try{
+      const {data} = await axios.get(url);
+      const result = data.find(todo => todo.id === this.id);
+      return result
+    }
+    catch(err){
+      return null
+    }
   }
 }
 
