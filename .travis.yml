@@ -8,6 +8,6 @@ cache:
 install:
   - npm install
 script:
-  - nohup nom run start &
+  - nohup npm run start &
   - sleep 3
   - npm run test
