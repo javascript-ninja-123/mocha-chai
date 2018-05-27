@@ -9,7 +9,7 @@ app.get('/', (req,res) => {
   res.send({message:'hi'})
 })
 
-app.get('/404', (res,send) => {
+app.get('/404', (req,res) => {
   res.status(500).end('error')
 })
 
