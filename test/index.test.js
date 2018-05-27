@@ -2,7 +2,7 @@ import chai, {expect} from 'chai';
 import chaiHttp from 'chai-http';
 import helloWord from '../src/hello';
 import bankAccount from '../src/bankAccount';
-import server from '../index';
+import server from '../src/index';
 chai.use(chaiHttp);
 
 describe('index.js', () => {
@@ -38,7 +38,7 @@ describe('bank account feature', () => {
 //https://github.com/chaijs/chai-http check this git repo
 describe('/GET', () => {
   it('returns msg', (done) => {
-    chai.request('http://localhost:8000')
+    chai.request('http://localhost:8080')
     .get('/')
     .then(res => {
       expect(res).to.have.status(200)
@@ -48,7 +48,7 @@ describe('/GET', () => {
     })
   })
   it('should fail / request', (done) => {
-    chai.request('http://localhost:8000')
+    chai.request('http://localhost:8080')
     .get('/404')
     .then((res) => {
       expect(res).to.have.status(500)
