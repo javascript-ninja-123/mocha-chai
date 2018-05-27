@@ -7,9 +7,15 @@ cache:
     - node_modules
 install:
   - npm install
+before_script:
   - npm run build
 script:
-  - sleep 10
   - npm run start &
   - sleep 3
   - npm run test
+notifications:
+  email:
+    recipients:
+      - sung.yi.developer@gmail.com
+    on_success: always
+    on_failure: always
